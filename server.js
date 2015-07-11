@@ -1,9 +1,10 @@
 var React = require('react');
-    // This is our React component, shared by server and browser thanks to browserify
 
-process.argv.forEach(function (val, index, arr) {
-  console.log(index + ': ' + val,arr);
-});
+//process.argv.forEach(function (val, index, arr) {
+//  console.log(index + ': ' + val,arr);
+//});
+
+    var myJson = JSON.parse(process.argv[2]);
     window={
         XMLHttpRequest:false
     };
@@ -11,6 +12,6 @@ process.argv.forEach(function (val, index, arr) {
     require(file);
    var MyApp=global.app;
    var tmp = React.renderToString(MyApp(
-       {view:'molecules'}
+      myJson 
    ));
    console.log(tmp);

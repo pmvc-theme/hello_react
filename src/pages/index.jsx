@@ -56,9 +56,8 @@ module.exports = React.createClass({
 
         return (
             <div>
-                hello react
-                <br/>
-                {this.props.slow}
+                <div>hello {this.props.text}</div>
+                <div>{this.props.laze_text}</div>
             </div>
         );  
   }

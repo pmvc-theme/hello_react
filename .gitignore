@@ -1,4 +1,5 @@
 node_modules
-assets
 npm-debug.log
 coverage*
+.php_cs.cache
+.*.sw?

@@ -7,8 +7,9 @@
 <link rel="stylesheet" type="text/css" href="http://i3.intw.tw/cdn/cdn.css?lib/semantic-ui/1.5.2/css/semantic.min.css">
 </head>
 <body>
-<?php echo $this->get('run')?>
+<div id="app"><?php echo $this['run']?></div>
 </body>
+<script>var REACT_DATA=<?php echo $this['react_data']?></script>
+<script src="assets/vendor.bundle.js"></script>
+<script src="assets/bundle.js"></script>
 </html>
-<script src="/pmvc/assets/bundle.php?p=vendor"></script>
-<script src="/pmvc/assets/bundle.php"></script>
