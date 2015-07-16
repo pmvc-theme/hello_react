@@ -50,6 +50,7 @@
 	  window.app=React.render(MyApp(REACT_DATA), document.getElementById('app'));
 	  window.React=React;
 	}else{
+	  global.React=React;
 	  global.app=MyApp;
 	}
 
