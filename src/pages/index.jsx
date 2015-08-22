@@ -1,18 +1,16 @@
 var React = require('react');
 
-
 module.exports = React.createClass({
-    displayName: 'ReactAtomicUIDoc',
+    displayName: 'ReactPMVC',
     statics: {
     },
     getDefaultProps: function(){
         return {
-            title: "Atomic Design"
         };
     },
     getInitialState: function () {
         return {
-            view: this.props.view
+            path: this.props.path
         };
     },
     render: function(){
