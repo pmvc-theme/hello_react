@@ -5,7 +5,7 @@ var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 module.exports = {
 //	devtool: 'sourcemap',
 	entry: {
-           main: "./src/entry.js",
+           main: "./src/server.js",
         },
 	output: {
 		filename: "node.bundle.js",
@@ -20,10 +20,14 @@ module.exports = {
         },
 	module: {
 	    loaders: [
-                  { test:/\.html$/, loader: 'html-loader' },
-                  { test:/\.json$/, loader: 'json-loader' },
-                  { test: /\.js$/,    loader: "jsx-loader?harmony&sourceMap" },
-                  { test: /\.jsx$/,   loader: "jsx-loader?harmony&sourceMap" },
+                  { 
+                    test: /(.js|.jsx)$/, 
+                    exclude: /node_modules/,
+                    loader: "babel-loader", 
+                    query:{
+                        cacheDirectory:true, 
+                    } 
+                  },
                   { test: /\.(otf|eot|svg|ttf|woff)/, loader: 'url-loader?limit=8192' }
 	    ]
 	},

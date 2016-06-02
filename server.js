@@ -3,12 +3,14 @@
 //  console.log(index + ': ' + val,arr);
 //});
 
-var ReactServer = require('react-dom/server');
-var args = process.argv.slice(2);
-var myJson = JSON.parse(args.join(''));
-var file = './assets/node.bundle.js'; 
-require(file);
+var fs = require('fs');
+var fd = process.stdin.fd;
+var buffer = fs.readSync(fd, 4096)[0];
+
+require('./assets/node.bundle.js');
+var myJson = JSON.parse(buffer);
 var MyApp = global.app;
+var ReactServer = global.reactServer;
 var tmp = ReactServer.renderToString(MyApp(
     myJson 
 ));
