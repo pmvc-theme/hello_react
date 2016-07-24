@@ -1,22 +1,42 @@
 'use strict';
-var webpack = require('webpack');
-var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+const webpack = require('webpack');
+const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+const ENV = process.env.NODE_ENV
+let plugins = [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.LimitChunkCountPlugin({maxChunks:1}),
+];
+if ('production' === ENV) {
+    plugins = plugins.concat([
+        new webpack.DefinePlugin({
+          'process.env':{
+            'NODE_ENV': JSON.stringify('production'),
+            '__DEVTOOLS__': false
+          }
+        }),
+        new UglifyJsPlugin({
+            compress: { warnings: false}
+        }),
+    ]);
+}
 
 module.exports = {
 //	devtool: 'sourcemap',
 	entry: {
-           main: "./src/server.js",
+           node: "./src/server.js",
         },
 	output: {
-		filename: "node.bundle.js",
-		path: __dirname + "/assets" ,
-		publicPath: "/react/assets/",
+	    filename: "[name].bundle.js",
+	    path: __dirname + "/assets"
 	},
         node: {
           fs: "empty",
         },
         resolve: {
             extensions: ['','.js','.jsx']
+        },
+        resolveLoader: {
+            root: __dirname + '/node_modules'
         },
 	module: {
 	    loaders: [
@@ -31,8 +51,5 @@ module.exports = {
                   { test: /\.(otf|eot|svg|ttf|woff)/, loader: 'url-loader?limit=8192' }
 	    ]
 	},
-	plugins: [
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.LimitChunkCountPlugin({maxChunks:1}),
-	]
+	plugins: plugins
 };
