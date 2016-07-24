@@ -19724,70 +19724,171 @@
 
 	'use strict';
 
-	var React = __webpack_require__(1);
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
 
-	module.exports = React.createClass({
-	    displayName: 'ReactPMVC',
-	    statics: {},
-	    getDefaultProps: function getDefaultProps() {
-	        return {};
-	    },
-	    getInitialState: function getInitialState() {
-	        return {
-	            path: this.props.path
-	        };
-	    },
-	    render: function render() {
-	        var pages = [{
-	            name: 'atoms',
-	            url: '/react/index.html/atoms',
-	            text: 'Atoms'
-	        }, {
-	            name: 'molecules',
-	            url: '/react/index.html/molecules',
-	            text: 'Molecules'
-	        }, {
-	            name: 'organisms',
-	            url: '/react/index.html/organisms',
-	            text: 'Organisms'
-	        }];
-	        var views = {};
-	        var self = this;
-	        var context = {
-	            executeAction: function executeAction(obj, nav) {
-	                var url = nav.url;
-	                var route = {
-	                    url: url,
-	                    navigate: { type: nav.type }
-	                };
-	                var params = url.split("/");
-	                var last = params.length - 1;
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	                self.setState({
-	                    view: params[last],
-	                    route: route
-	                });
-	            }
-	        };
-	        var state = this.state;
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-	        return React.createElement(
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _home = __webpack_require__(166);
+
+	var _home2 = _interopRequireDefault(_home);
+
+	var _pmvc_react_admin = __webpack_require__(167);
+
+	var _pmvc_react_admin2 = _interopRequireDefault(_pmvc_react_admin);
+
+	var Index = (function (_Component) {
+	    _inherits(Index, _Component);
+
+	    function Index() {
+	        _classCallCheck(this, Index);
+
+	        _get(Object.getPrototypeOf(Index.prototype), 'constructor', this).apply(this, arguments);
+	    }
+
+	    _createClass(Index, [{
+	        key: 'render',
+	        value: function render() {
+	            var themes = {
+	                home: _react2['default'].createElement(_home2['default'], null)
+	            };
+	            return _react2['default'].createElement(_pmvc_react_admin2['default'], _extends({
+	                themes: themes
+	            }, this.props));
+	        }
+	    }]);
+
+	    return Index;
+	})(_react.Component);
+
+	exports['default'] = Index;
+	module.exports = exports['default'];
+
+/***/ },
+/* 166 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var Home = function Home(props) {
+	    return _react2['default'].createElement(
+	        'div',
+	        null,
+	        _react2['default'].createElement(
 	            'div',
 	            null,
-	            React.createElement(
-	                'div',
-	                null,
-	                'hello ',
-	                this.props.text
-	            ),
-	            React.createElement(
-	                'div',
-	                null,
-	                this.props.laze_text
-	            )
-	        );
-	    }
-	});
+	            'hello ',
+	            props.text
+	        ),
+	        _react2['default'].createElement(
+	            'div',
+	            null,
+	            props.laze_text
+	        )
+	    );
+	};
+
+	exports['default'] = Home;
+	module.exports = exports['default'];
+
+/***/ },
+/* 167 */
+/***/ function(module, exports) {
+
+	// Templates
+	export { default as  TwoColumns } from './templates/two_columns';
+
+	// Organisms
+	export { default as  VerticalMenu } from './organisms/vertical_menu';
+	export { default as  Link } from './organisms/link';
+	export { default as  AdminForm } from './organisms/form';
+	export { default as  OneLineForm } from './organisms/one_line_form';
+	export { default as  FormConsole } from './organisms/form_console';
+	export { default as  FormTextarea } from './organisms/form_textarea';
+	export { default as  FormButton } from './organisms/form_button';
+	export { default as  FormPreview } from './organisms/form_preview';
+	export { default as  FormList } from './organisms/form_list';
+	export { default as  PopupCDN } from './organisms/popup_cdn';
+
+	// Ajax
+	export {
+	    ajaxDispatch
+	} from 'react-organism-ajax';
+
+	export { 
+	    AlertsNotifier,
+	    popupDispatch 
+	} from 'react-organism-popup';
+
+	export {
+	    Card,
+	    Button,
+	    List,
+	    Field,
+	    Item,
+	    Menu,
+	    Segment,
+	    reactStyle
+	} from 'react-atomic-molecule';
+
+	export {
+	    CardView,
+	    Tab,
+	    TabView,
+	    CDN,
+	    FormattedJson,
+	    MaterialInput
+	} from 'react-atomic-organism';
+
+	export {
+	    OrgChart,
+	    OrgChartGroup,
+	    OrgChartItem
+	} from 'react-organism-orgchart';
+
+	export { Container } from 'flux/utils';
+
+	export { default as React, Component} from 'react';
+
+	export {Table, Column, Cell} from 'pmvc_react_list';
+
+
+	// Stores
+	export { default as  pageStore } from './stores/pageStore';
+
+	// Dispatch
+	export { dispatch } from './actions/dispatcher';
+	export { default as Immutable } from 'immutable';
+	export { ReduceStore } from 'flux/utils';
+
+	// Default
+	export {default} from './organisms/pmvc_react_admin';
+
 
 /***/ }
 /******/ ]);

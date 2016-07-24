@@ -1,62 +1,21 @@
-var React = require('react');
+import React, {Component} from 'react'; 
+import Home from './home';
+import PMVCReactAdmin from 'pmvc_react_admin'; 
 
-module.exports = React.createClass({
-    displayName: 'ReactPMVC',
-    statics: {
-    },
-    getDefaultProps: function(){
-        return {
-        };
-    },
-    getInitialState: function () {
-        return {
-            path: this.props.path
-        };
-    },
-    render: function(){
-        var pages = [
-            {
-                name: 'atoms',
-                url: '/react/index.html/atoms',
-                text: 'Atoms'
-            },
-            {
-                name: 'molecules',
-                url: '/react/index.html/molecules',
-                text: 'Molecules'
-            },
-            {
-                name: 'organisms',
-                url: '/react/index.html/organisms',
-                text: 'Organisms'
-            }
-        ];
-        var views = {
-        };
-        var self=this;
-        var context = {
-            executeAction: function(obj,nav){
-              var url = nav.url;
-              var route = {
-                    url:url,
-                    navigate:{type:nav.type}
-              };
-              var params = url.split("/");
-              var last=params.length-1;
-    
-              self.setState({
-                view: params[last], 
-                route: route
-              });
-            }
-        };
-        var state = this.state;
+class Index extends Component
+{
 
+   render(){
+        let themes = {
+            home: <Home />,
+        };
         return (
-            <div>
-                <div>hello {this.props.text}</div>
-                <div>{this.props.laze_text}</div>
-            </div>
+            <PMVCReactAdmin 
+                themes={themes}
+                {...this.props}
+            />
         );  
-  }
-});
+    }
+}
+
+export default Index;
