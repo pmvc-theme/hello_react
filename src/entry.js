@@ -1,10 +1,9 @@
+Object.assign = null;
 const React=require('react');
-const MyApp = React.createFactory(require('./pages/index.jsx'));
-if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+setTimeout(()=>{
   const ReactDOM = require('react-dom');
+  const MyApp = React.createFactory(require('../ui/pages/index'));
   window.app=MyApp;
-  ReactDOM.render(new MyApp(REACT_DATA), document.getElementById('app'));
   window.ReactDOM=ReactDOM;
-}else{
-  global.app=MyApp;
-}
+  ReactDOM.render(new MyApp(REACT_DATA), document.getElementById('app'));
+});
