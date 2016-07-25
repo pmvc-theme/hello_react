@@ -1,5 +1,5 @@
 import React, {Component} from 'react'; 
-import Home from './home';
+import Hello from './hello';
 import PMVCReactAdmin from 'pmvc_react_admin'; 
 
 class Index extends Component
@@ -7,7 +7,7 @@ class Index extends Component
 
    render(){
         let themes = {
-            home: <Home />,
+            hello: <Hello />,
         };
         return (
             <PMVCReactAdmin 
