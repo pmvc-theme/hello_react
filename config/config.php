@@ -2,7 +2,7 @@
 
 $paths=[
     'index'=>__DIR__.'/../index.html',
-    'laze'=>__DIR__.'/../index_laze.html',
+    'laze'=>__DIR__.'/../laze.html',
 ];
 
 ${_INIT_CONFIG}=[
