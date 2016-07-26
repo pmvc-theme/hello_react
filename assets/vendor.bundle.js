@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + "868a31b79eb4f6736fde" + ".bundle.js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + "e6e4c4212062252fdf9a" + ".bundle.js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -88,7 +88,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/pmvc/assets";
+/******/ 	__webpack_require__.p = "/react/assets";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
