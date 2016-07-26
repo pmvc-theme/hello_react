@@ -1,7 +1,7 @@
 'use strict';
 const webpack = require('webpack');
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-const ENV = process.env.NODE_ENV
+const ENV = process.env.NODE_ENV;
 let plugins = [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.LimitChunkCountPlugin({maxChunks:1}),
@@ -21,7 +21,6 @@ if ('production' === ENV) {
 }
 
 module.exports = {
-//	devtool: 'sourcemap',
 	entry: {
            node: "./src/server.js",
         },
@@ -42,13 +41,12 @@ module.exports = {
 	    loaders: [
                   { 
                     test: /(.js|.jsx)$/, 
-                    exclude: /node_modules/,
+                    //exclude: /node_modules/,
                     loader: "babel-loader", 
                     query:{
-                        cacheDirectory:true, 
+                        cacheDirectory:true
                     } 
-                  },
-                  { test: /\.(otf|eot|svg|ttf|woff)/, loader: 'url-loader?limit=8192' }
+                  }
 	    ]
 	},
 	plugins: plugins
