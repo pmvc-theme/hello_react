@@ -19744,9 +19744,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _home = __webpack_require__(166);
+	var _hello = __webpack_require__(166);
 
-	var _home2 = _interopRequireDefault(_home);
+	var _hello2 = _interopRequireDefault(_hello);
 
 	var _pmvc_react_admin = __webpack_require__(167);
 
@@ -19765,7 +19765,7 @@
 	        key: 'render',
 	        value: function render() {
 	            var themes = {
-	                home: _react2['default'].createElement(_home2['default'], null)
+	                hello: _react2['default'].createElement(_hello2['default'], null)
 	            };
 	            return _react2['default'].createElement(_pmvc_react_admin2['default'], _extends({
 	                themes: themes
@@ -19789,31 +19789,59 @@
 	    value: true
 	});
 
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var Home = function Home(props) {
-	    return _react2['default'].createElement(
-	        'div',
-	        null,
-	        _react2['default'].createElement(
-	            'div',
-	            null,
-	            'hello ',
-	            props.text
-	        ),
-	        _react2['default'].createElement(
-	            'div',
-	            null,
-	            props.laze_text
-	        )
-	    );
-	};
+	var _pmvc_react_admin = __webpack_require__(167);
 
-	exports['default'] = Home;
+	var Hello = (function (_Component) {
+	    _inherits(Hello, _Component);
+
+	    function Hello() {
+	        _classCallCheck(this, Hello);
+
+	        _get(Object.getPrototypeOf(Hello.prototype), 'constructor', this).apply(this, arguments);
+	    }
+
+	    _createClass(Hello, [{
+	        key: 'render',
+	        value: function render() {
+	            var pageState = _pmvc_react_admin.pageStore.getState();
+	            var text = pageState.get('text');
+	            var laze_text = pageState.get('laze_text');
+	            return _react2['default'].createElement(
+	                'div',
+	                null,
+	                _react2['default'].createElement(
+	                    'div',
+	                    null,
+	                    'hello ',
+	                    text
+	                ),
+	                _react2['default'].createElement(
+	                    'div',
+	                    null,
+	                    laze_text
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Hello;
+	})(_react.Component);
+
+	exports['default'] = Hello;
 	module.exports = exports['default'];
 
 /***/ },
