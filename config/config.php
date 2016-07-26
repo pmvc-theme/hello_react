@@ -7,7 +7,7 @@ $paths=[
 
 ${_INIT_CONFIG}=[
     'paths'=>$paths,
-    'assetsRoot'=>'/pmvc/assets',
+    'assetsRoot'=>'/react/assets',
     'webpackVendor'=>[]
 ];
 

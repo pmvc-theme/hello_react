@@ -1,6 +1,6 @@
 import React, {Component} from 'react'; 
 import Hello from './hello';
-import PMVCReactAdmin from 'pmvc_react_admin'; 
+import Reshow from 'reshow'; 
 
 class Index extends Component
 {
@@ -10,7 +10,7 @@ class Index extends Component
             hello: <Hello />,
         };
         return (
-            <PMVCReactAdmin 
+            <Reshow
                 themes={themes}
                 {...this.props}
             />

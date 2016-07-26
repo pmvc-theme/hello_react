@@ -1,7 +1,7 @@
 import React, {Component} from 'react'; 
 import {
     pageStore
-} from 'pmvc_react_admin'; 
+} from 'reshow'; 
 
 class Hello extends Component
 {

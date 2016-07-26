@@ -1,13 +1,19 @@
 webpackJsonp([1],{
 
-/***/ 273:
+/***/ 271:
 /***/ function(module, exports) {
+
+	'use strict';
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+	    return typeof obj;
+	} : function (obj) {
+	    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj;
+	};
 
 	// dlog 0.1.1
 	// http://ddo.github.io/dlog
 	// (c) 2014 Ddo <http://ddo.me>
-
-	'use strict';
 
 	function dlog(opts) {
 	    if (!(this instanceof dlog)) {
@@ -76,7 +82,7 @@ webpackJsonp([1],{
 	dlog.prototype.isAllObj = function (arr) {
 	    var is_all_obj = true;
 	    for (var i = 0; i < arr.length; i++) {
-	        if (typeof arr[i] !== 'object') return false;
+	        if (_typeof(arr[i]) !== 'object') return false;
 	    }
 	    return true;
 	};
