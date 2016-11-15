@@ -1,21 +1,15 @@
-import React, {Component} from 'react'; 
+import React from 'react'; 
 import Hello from './hello';
 import Reshow from 'reshow'; 
 
-class Index extends Component
-{
+const themes = {
+    hello: <Hello />,
+};
 
-   render(){
-        let themes = {
-            hello: <Hello />,
-        };
-        return (
-            <Reshow
-                themes={themes}
-                {...this.props}
-            />
-        );  
-    }
-}
+const Index = (props) => 
+<Reshow
+    themes={themes}
+    {...props}
+/>
 
 export default Index;
