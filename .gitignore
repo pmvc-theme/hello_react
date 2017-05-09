@@ -1,5 +1,8 @@
-node_modules
-npm-debug.log
-coverage*
 .php_cs.cache
 .*.sw?
+.env
+coverage*
+vendor
+build
+node_modules
+npm-debug.log
