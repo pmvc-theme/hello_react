@@ -3,7 +3,7 @@ import Hello from './hello';
 import Reshow from 'reshow'; 
 
 const themes = {
-    hello: <Hello />,
+    hello: Hello,
 };
 
 const Index = (props) => 
