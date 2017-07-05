@@ -11,10 +11,19 @@
             var laze = <?php echo json_encode($this->get())?>;
             if (laze.length===0) {
                laze = {}; 
+            } else {
+                var data = laze.data;
+                for (var i in data) {
+                    if(data.hasOwnProperty(i))
+                    {
+                        REACT_DATA.data[i] = data[i];
+                    }
+                }
             }
-            ReactDOM.render(new app(laze), document.getElementById('app'));
+            ReactDOM.render(new app(REACT_DATA), document.getElementById('app'));
             clearInterval(time);
         }
    },300);
 }());
 </script>
+<?php echo $this['jsonld']?>

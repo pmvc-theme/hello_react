@@ -1,22 +1,21 @@
 import React, {Component} from 'react'; 
 import {
-    pageStore
+    reshow,
+    ReshowComponent
 } from 'reshow'; 
 
-class Hello extends Component
+class Hello extends ReshowComponent
 {
     render()
     {
-        let pageState = pageStore.getState();
-        let text = pageState.get('text');
-        let laze_text = pageState.get('laze_text');
+        const {data} = this.state;
         return (
             <div>
-                <div>hello {text}</div>
-                <div>{laze_text}</div>
+                <div>hello {data.text}</div>
+                <div>{data.laze_text}</div>
             </div>
         );
     }
 }
 
-export default Hello;
+export default reshow(Hello);

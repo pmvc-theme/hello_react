@@ -1,6 +1,4 @@
 {
-  "name": "react-pmvc",
-  "version": "0.0.0",
   "description": "A very simple implementation of server-side React rendering",
   "repository": "pmvc-theme/hello_react",
   "keywords": [

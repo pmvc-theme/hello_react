@@ -1402,8 +1402,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var keys = Object.keys;
 
-var ReshowComponent = function (_Component) {
-    _inherits(ReshowComponent, _Component);
+var ReshowComponent = function (_PureComponent) {
+    _inherits(ReshowComponent, _PureComponent);
 
     function ReshowComponent() {
         _classCallCheck(this, ReshowComponent);
@@ -1452,7 +1452,7 @@ var ReshowComponent = function (_Component) {
     }]);
 
     return ReshowComponent;
-}(_react.Component);
+}(_react.PureComponent);
 
 exports.default = ReshowComponent;
 module.exports = exports['default'];
@@ -2456,8 +2456,8 @@ function _inherits(subClass, superClass) {
 
 
 
-var Hello = function (_Component) {
-    _inherits(Hello, _Component);
+var Hello = function (_ReshowComponent) {
+    _inherits(Hello, _ReshowComponent);
 
     function Hello() {
         _classCallCheck(this, Hello);
@@ -2468,17 +2468,16 @@ var Hello = function (_Component) {
     _createClass(Hello, [{
         key: 'render',
         value: function render() {
-            var pageState = __WEBPACK_IMPORTED_MODULE_1_reshow__["pageStore"].getState();
-            var text = pageState.get('text');
-            var laze_text = pageState.get('laze_text');
-            return _jsx('div', {}, void 0, _jsx('div', {}, void 0, 'hello ', text), _jsx('div', {}, void 0, laze_text));
+            var data = this.state.data;
+
+            return _jsx('div', {}, void 0, _jsx('div', {}, void 0, 'hello ', data.text), _jsx('div', {}, void 0, data.laze_text));
         }
     }]);
 
     return Hello;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+}(__WEBPACK_IMPORTED_MODULE_1_reshow__["ReshowComponent"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (Hello);
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_1_reshow__["reshow"](Hello));
 
 /***/ }),
 /* 217 */
