@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<base href="<?php echo $this->get('baseUrl')?>" />
-<title><?php echo $this->get('htmlTitle')?></title>
 <?php
-$metas = $this->get('meta');
-if (is_array($metas)) {
-    foreach ($metas as $meta) {
-        echo '<meta ';
-        foreach ($meta as $v) {
-            $k = \PMVC\value($v,['key']);
-            $v = \PMVC\value($v,['value']);
-            echo $k.'="'.$v.'" ';
-        }
-        echo '>';
-    }
+if (empty($this['ttfb'])) {
+   include($this->getTplFile('header')); 
 }
 ?>
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/base-min.css">
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/grids-min.css">
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/grids-responsive-min.css">
-</head>
 <body>
 <div id="app"><?php echo $this['run']?></div>
 </body>
@@ -32,4 +11,3 @@ if (is_array($metas)) {
 <script>var REACT_DATA=<?php echo $this['reactData']?></script>
 <script src="<?php echo $this['assetsRoot']?>vendor.bundle.js?<?php echo $this['staticVersion']?>"></script>
 <script defer src="<?php echo $this['assetsRoot']?>main.bundle.js?<?php echo $this['staticVersion']?>"></script>
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">

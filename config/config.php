@@ -1,8 +1,9 @@
 <?php
 
 $paths=[
-    'index'=>__DIR__.'/../index.html',
-    'laze'=>__DIR__.'/../laze.html',
+    'index' => __DIR__.'/../index.html',
+    'laze'  => __DIR__.'/../laze.html',
+    'header'=> __DIR__.'/../header.html',
 ];
 
 ${_INIT_CONFIG}=[
