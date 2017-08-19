@@ -1,4 +1,5 @@
 import React, {Component} from 'react'; 
+import get from 'get-object-value';
 import {
     reshow,
     ReshowComponent
@@ -11,8 +12,8 @@ class Hello extends ReshowComponent
         const {data} = this.state;
         return (
             <div>
-                <div>hello {data.text}</div>
-                <div>{data.laze_text}</div>
+                <div>hello {get(data,['text'])}</div>
+                <div>{get(data, ['laze_text'])}</div>
             </div>
         );
     }

@@ -8,6 +8,7 @@
   "author": "Hill <hill@kimo.com>",
   "license": "MIT",
   "dependencies": {
+    "get-object-value": "*",
     "react": "^15.x",
     "react-dom": "^15.x",
     "reshow": "*"
