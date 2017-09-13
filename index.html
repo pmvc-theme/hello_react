@@ -7,7 +7,6 @@ if (empty($this['ttfb'])) {
 <div id="app"><?php echo $this['run']?></div>
 </body>
 </html>
-
-<script>var REACT_DATA=<?php echo $this['reactData']?></script>
 <script src="<?php echo $this['assetsRoot']?>vendor.bundle.js?<?php echo $this['staticVersion']?>"></script>
-<script defer src="<?php echo $this['assetsRoot']?>main.bundle.js?<?php echo $this['staticVersion']?>"></script>
+<?php flush()?>
+<script>var REACT_DATA=<?php echo $this['reactData']?></script>
