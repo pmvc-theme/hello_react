@@ -7,7 +7,7 @@
         if (retry > 5) {
             clearInterval(time);
         }
-        if ('undefined' !== typeof app && 'undefined' !== typeof ReactDOM) {
+        if ('undefined' !== typeof Reshow) {
             var laze = <?php echo json_encode($this->get())?>;
             if (laze.length===0) {
                laze = {}; 
@@ -20,7 +20,7 @@
                     }
                 }
             }
-            ReactDOM.render(new app(REACT_DATA), document.getElementById('app'));
+            Reshow.render(new Reshow.app(REACT_DATA), document.getElementById('app'));
             clearInterval(time);
         }
    },300);

@@ -7,6 +7,9 @@ if (empty($this['ttfb'])) {
 <div id="app"><?php echo $this['run']?></div>
 </body>
 </html>
+<script src="//cdn.jsdelivr.net/npm/babel-polyfill@6.26.0/dist/polyfill.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 <script src="<?php echo $this['assetsRoot']?>vendor.bundle.js?<?php echo $this['staticVersion']?>"></script>
 <?php flush()?>
 <script>var REACT_DATA=<?php echo $this['reactData']?></script>
