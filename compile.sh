@@ -1,5 +1,4 @@
 #!/bin/sh
-find ./assets -name "*.js" | xargs rm -rf
 
 phpc=`DUMP=cli php -r "include('config/config.php');"`
 
