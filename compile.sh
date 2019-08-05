@@ -33,6 +33,7 @@ startServer(){
 
 nodeTest(){
     echo '{"themePath":"hello"}' | node ./server.js
+    echo ""
 }
 
 case "$1" in
