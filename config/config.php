@@ -1,4 +1,7 @@
 <?php
+if (!defined('_INIT_CONFIG')) {
+  define('_INIT_CONFIG', '_init_config');
+}
 
 $paths=[
     'index' => __DIR__.'/../index.html',
