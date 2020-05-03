@@ -1,0 +1,150 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "03637cc282527f4d684faa4d44489b7c",
+    "content-hash": "8562746ab442a3721bf54c468382cf51",
+    "packages": [
+        {
+            "name": "pmvc-plugin/view",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pmvc-plugin/view.git",
+                "reference": "566f8b9127b5ae9fd6b11d5554ec1b9dd0d18eab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pmvc-plugin/view/zipball/566f8b9127b5ae9fd6b11d5554ec1b9dd0d18eab",
+                "reference": "566f8b9127b5ae9fd6b11d5554ec1b9dd0d18eab",
+                "shasum": ""
+            },
+            "require": {
+                "pmvc/pmvc": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PMVC\\PlugIn\\view\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hill",
+                    "email": "hill@kimo.com"
+                }
+            ],
+            "description": "PMVC official view engine",
+            "homepage": "https://github.com/pmvc-plugin/view",
+            "keywords": [
+                "plug-in",
+                "pmvc",
+                "view"
+            ],
+            "time": "2019-12-05 15:18:48"
+        },
+        {
+            "name": "pmvc-plugin/view_react",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pmvc-plugin/view_react.git",
+                "reference": "b4e0fc6c307e9dde055e6f4b543afc6f08a8775c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pmvc-plugin/view_react/zipball/b4e0fc6c307e9dde055e6f4b543afc6f08a8775c",
+                "reference": "b4e0fc6c307e9dde055e6f4b543afc6f08a8775c",
+                "shasum": ""
+            },
+            "require": {
+                "pmvc-plugin/view": "*"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hill",
+                    "email": "hill@kimo.com"
+                }
+            ],
+            "description": "PMVC view engine for react.js",
+            "homepage": "https://github.com/pmvc-plugin/view_react",
+            "keywords": [
+                "plug-in",
+                "pmvc",
+                "react",
+                "template",
+                "view"
+            ],
+            "time": "2019-12-06 04:12:49"
+        },
+        {
+            "name": "pmvc/pmvc",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pmvc/pmvc.git",
+                "reference": "6d05377c1208892173ca67aefb394def6d14ec2b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pmvc/pmvc/zipball/6d05377c1208892173ca67aefb394def6d14ec2b",
+                "reference": "6d05377c1208892173ca67aefb394def6d14ec2b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "pmvc-plugin/debug": "*",
+                "pmvc-plugin/dev": "*",
+                "pmvc-plugin/utf8": "*",
+                "squizlabs/php_codesniffer": "@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PMVC\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hill",
+                    "email": "hill@kimo.com"
+                }
+            ],
+            "description": "Pure plugin framework (PMVC7), use anything you like. No mvc, http inside.",
+            "keywords": [
+                "framework",
+                "mvc",
+                "phramework",
+                "plug",
+                "plug-in",
+                "pmvc"
+            ],
+            "time": "2019-12-24 17:55:06"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
