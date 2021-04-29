@@ -1,25 +1,37 @@
 #!/bin/sh
 
-phpc=`DUMP=cli php -r "include('config/config.php');"`
+CHK_PHP=$(which php 2>/dev/null)
+
+if [ ! -z "$CHK_PHP" ]; then
+  conf=`DUMP=cli php -r "include('config/config.php');"`
+else
+  conf='{'
+  conf+='"assetsRoot":"./assets/",'
+  conf+='"devPort": "'${devPort:-8080}'"'
+  conf+='}'
+fi
+
+echo $conf;
+webpack='npm run webpack --'
 
 production(){
     echo "Production Mode";
     npm run build
-    NODE_ENV=production CONFIG=$phpc webpack -p --optimize-minimize 
-    NODE_ENV=production webpack -p --config webpack.server.js --optimize-minimize
+    NODE_ENV=production CONFIG=$conf $webpack 
+    NODE_ENV=production CONFIG=$conf $webpack --config webpack.server.js
 }
 
 develop(){
     echo "Develop Mode";
     npm run build
-    CONFIG=$phpc webpack
-    webpack --config webpack.server.js
+    CONFIG=$conf $webpack
+    CONFIG=$conf $webpack --config webpack.server.js
 }
 
 analyzer(){
     echo "Analyzer Mode";
     npm run build
-    CONFIG=$conf BUNDLE='{}' webpack
+    CONFIG=$conf BUNDLE='{}' $webpack
 }
 
 startServer(){
@@ -28,7 +40,7 @@ startServer(){
         port=3000;
     fi
     echo "Start server";
-    node_modules/.bin/ws -p $port -v 
+    npm run start -- -p $port -v
 }
 
 nodeTest(){
