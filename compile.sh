@@ -7,7 +7,7 @@ if [ ! -z "$CHK_PHP" ]; then
 else
   conf='{'
   conf+='"assetsRoot":"./assets/",'
-  conf+='"devPort": "'${devPort:-8080}'"'
+  conf+='"devPort": "'${hotPort:-8080}'"'
   conf+='}'
 fi
 
@@ -48,12 +48,27 @@ nodeTest(){
     echo ""
 }
 
+killBy(){
+    ps -eo pid,args | grep $1 | grep -v grep | awk '{print $1}' | xargs -I{} kill -9 {}
+}
+
+stop(){
+    DIR="$( cd "$(dirname "$0")" ; pwd -P )"
+    killBy ${DIR}/node_modules/.bin/babel 
+    cat webpack.pid | xargs -I{} kill -9 {}
+    npm run clean
+}
+
+hot(){
+    echo "Hot Mode";
+    npm run build:ui -- --watch &
+    npm run build:src -- --watch &
+    HOT_UPDATE=1 CONFIG=$conf $webpack serve &
+}
+
 case "$1" in
   node)
     nodeTest
-    ;;
-  p)
-    production
     ;;
   a)
     analyzer 
@@ -61,7 +76,19 @@ case "$1" in
   s)
     startServer 
     ;;
+  p)
+    stop 
+    production
+    ;;
+  hot)
+    stop 
+    hot
+    ;;
+  stop)
+    stop 
+    ;;
   *)
+    stop 
     develop
     exit
 esac

@@ -7515,9 +7515,9 @@ requires-port@^1.0.0:
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
 
 reshow-app@*:
-  version "0.14.5"
-  resolved "https://registry.yarnpkg.com/reshow-app/-/reshow-app-0.14.5.tgz#ae25aa24504e6789dbee093b5d454de8d10208ef"
-  integrity sha512-AmGQwUvb5ylSoszmYGGjwJJVO//LLbeo5G6Wqr0NtvY8VM7y+kMJpZ01sNeYEr/booYkhXqMZir9lp9nMXYeYA==
+  version "0.14.6"
+  resolved "https://registry.yarnpkg.com/reshow-app/-/reshow-app-0.14.6.tgz#dfd6722e3fd254fd9d4f64bc334b825881f8c8f1"
+  integrity sha512-VmyV2LCC6V+2lQPXOs9VNcuRGja+n2qwHk3nbCjAN7NMjXXf8pO5iGkW/YCpZ96aM8PCBCqu1hkKj52fbH56Lg==
   dependencies:
     "@babel/cli" "^7.x"
     "@babel/core" "^7.x"
