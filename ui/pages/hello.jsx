@@ -8,6 +8,7 @@ const Hello = () => (
       <>
         <div>hello {get(data, ["text"])}</div>
         <div>{get(data, ["laze_text"])}</div>
+        <div><a href="/hello_app/ttfb">Test ttfb</a></div>
       </>
     )}
   </Return>

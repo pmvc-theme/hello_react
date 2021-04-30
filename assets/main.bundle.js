@@ -64,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + chunkId + "." + "a181e819754d0fe28267" + ".bundle.js"
+/******/ 		return __webpack_require__.p + "" + chunkId + "." + "bc0f06d245b553940974" + ".bundle.js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -254,6 +254,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var get_object_value__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! get-object-value */ "./node_modules/get-object-value/build/es/src/index.js");
 /* harmony import */ var reshow__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reshow */ "./node_modules/reshow/build/es/src/index.js");
+var _div;
+
 
 
 
@@ -261,7 +263,9 @@ __webpack_require__.r(__webpack_exports__);
 var Hello = function Hello() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reshow__WEBPACK_IMPORTED_MODULE_2__["Return"], null, function (_ref) {
     var data = _ref.data;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "hello ", Object(get_object_value__WEBPACK_IMPORTED_MODULE_1__["default"])(data, ["text"])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, Object(get_object_value__WEBPACK_IMPORTED_MODULE_1__["default"])(data, ["laze_text"])));
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "hello ", Object(get_object_value__WEBPACK_IMPORTED_MODULE_1__["default"])(data, ["text"])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, Object(get_object_value__WEBPACK_IMPORTED_MODULE_1__["default"])(data, ["laze_text"])), _div || (_div = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      href: "/hello_app/ttfb"
+    }, "Test ttfb"))));
   });
 };
 

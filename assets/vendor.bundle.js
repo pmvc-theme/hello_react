@@ -9882,8 +9882,9 @@ var AjaxPage = function AjaxPage(_ref) {
       return null;
     } else {
       if (fallback) {
+        var fallbackEl = true === fallback ? "div" : fallback;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1__["Suspense"], {
-          fallback: Object(reshow_build__WEBPACK_IMPORTED_MODULE_2__["default"])(fallback)()
+          fallback: Object(reshow_build__WEBPACK_IMPORTED_MODULE_2__["default"])(fallbackEl)()
         }, builded);
       } else {
         return builded;
@@ -47490,7 +47491,8 @@ var ClientRoute = /*#__PURE__*/function (_Reshow) {
 
 Object(reshow_runtime_es_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(ClientRoute, "defaultProps", {
   ajax: false,
-  goAnchorDelay: 1500
+  goAnchorDelay: 1500,
+  fallback: 'div'
 });
 
 /* harmony default export */ __webpack_exports__["default"] = (ClientRoute);
@@ -48467,7 +48469,7 @@ var Reshow = /*#__PURE__*/function (_PureComponent) {
 }(react__WEBPACK_IMPORTED_MODULE_6__["PureComponent"]);
 
 Object(reshow_runtime_es_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_5__["default"])(Reshow, "defaultProps", {
-  fallback: "div"
+  fallback: false
 });
 
 /* harmony default export */ __webpack_exports__["default"] = (Reshow);
