@@ -13,5 +13,10 @@
     "require": {
         "pmvc-plugin/view_react": "*"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "mouf/nodejs-installer": true
+        }
+    }
 }

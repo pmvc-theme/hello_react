@@ -1,29 +1,138 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "03637cc282527f4d684faa4d44489b7c",
     "content-hash": "8562746ab442a3721bf54c468382cf51",
     "packages": [
+        {
+            "name": "mouf/nodejs-installer",
+            "version": "v1.0.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thecodingmachine/nodejs-installer.git",
+                "reference": "8b26f6893698f057b2c97b6bbf1a0cd12c2343e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thecodingmachine/nodejs-installer/zipball/8b26f6893698f057b2c97b6bbf1a0cd12c2343e9",
+                "reference": "8b26f6893698f057b2c97b6bbf1a0cd12c2343e9",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "ext-openssl": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "composer/composer": "^1.7",
+                "phpunit/phpunit": "^7.4"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": [
+                    "Mouf\\NodeJsInstaller\\NodeJsPlugin"
+                ],
+                "mouf": {
+                    "logo": "node-js.png"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mouf\\NodeJsInstaller\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Négrier",
+                    "email": "d.negrier@thecodingmachine.com",
+                    "homepage": "http://mouf-php.com"
+                }
+            ],
+            "description": "An installer package that let's you install NodeJS and NPM as a Composer dependency.",
+            "homepage": "http://mouf-php.com/packages/mouf/nodejs-installer",
+            "keywords": [
+                "installer",
+                "nodejs",
+                "npm"
+            ],
+            "support": {
+                "issues": "https://github.com/thecodingmachine/nodejs-installer/issues",
+                "source": "https://github.com/thecodingmachine/nodejs-installer/tree/v1.0.14"
+            },
+            "time": "2020-11-04T08:03:55+00:00"
+        },
+        {
+            "name": "pmvc-plugin/nodejs",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pmvc-plugin/nodejs.git",
+                "reference": "065262bb334b5803663cab8f041cf1f39fe0ebca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pmvc-plugin/nodejs/zipball/065262bb334b5803663cab8f041cf1f39fe0ebca",
+                "reference": "065262bb334b5803663cab8f041cf1f39fe0ebca",
+                "shasum": ""
+            },
+            "require": {
+                "mouf/nodejs-installer": "v1.0.14"
+            },
+            "require-dev": {
+                "pmvc-plugin/unit": "*"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hill",
+                    "email": "hill@kimo.com"
+                }
+            ],
+            "description": "Nodejs Selector.",
+            "homepage": "https://github.com/pmvc/pmvc",
+            "keywords": [
+                "nodejs",
+                "plug-in",
+                "pmvc"
+            ],
+            "support": {
+                "issues": "https://github.com/pmvc-plugin/nodejs/issues",
+                "source": "https://github.com/pmvc-plugin/nodejs/tree/0.0.2"
+            },
+            "time": "2022-03-17T21:22:11+00:00"
+        },
         {
             "name": "pmvc-plugin/view",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pmvc-plugin/view.git",
-                "reference": "566f8b9127b5ae9fd6b11d5554ec1b9dd0d18eab"
+                "reference": "6dfee62c214bc058bb22490375d6ffbaddd33ee4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pmvc-plugin/view/zipball/566f8b9127b5ae9fd6b11d5554ec1b9dd0d18eab",
-                "reference": "566f8b9127b5ae9fd6b11d5554ec1b9dd0d18eab",
+                "url": "https://api.github.com/repos/pmvc-plugin/view/zipball/6dfee62c214bc058bb22490375d6ffbaddd33ee4",
+                "reference": "6dfee62c214bc058bb22490375d6ffbaddd33ee4",
                 "shasum": ""
             },
             "require": {
                 "pmvc/pmvc": "*"
             },
+            "require-dev": {
+                "pmvc-plugin/unit": "*"
+            },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -47,7 +156,11 @@
                 "pmvc",
                 "view"
             ],
-            "time": "2019-12-05 15:18:48"
+            "support": {
+                "issues": "https://github.com/pmvc-plugin/view/issues",
+                "source": "https://github.com/pmvc-plugin/view/tree/0.5.6"
+            },
+            "time": "2022-04-12T13:19:02+00:00"
         },
         {
             "name": "pmvc-plugin/view_react",
@@ -55,17 +168,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pmvc-plugin/view_react.git",
-                "reference": "b4e0fc6c307e9dde055e6f4b543afc6f08a8775c"
+                "reference": "568b17bbfd449d687ef88d56b62311d56d492683"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pmvc-plugin/view_react/zipball/b4e0fc6c307e9dde055e6f4b543afc6f08a8775c",
-                "reference": "b4e0fc6c307e9dde055e6f4b543afc6f08a8775c",
+                "url": "https://api.github.com/repos/pmvc-plugin/view_react/zipball/568b17bbfd449d687ef88d56b62311d56d492683",
+                "reference": "568b17bbfd449d687ef88d56b62311d56d492683",
                 "shasum": ""
             },
             "require": {
+                "pmvc-plugin/nodejs": "*",
                 "pmvc-plugin/view": "*"
             },
+            "require-dev": {
+                "pmvc-plugin/unit": "*"
+            },
+            "default-branch": true,
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -86,20 +204,24 @@
                 "template",
                 "view"
             ],
-            "time": "2019-12-06 04:12:49"
+            "support": {
+                "issues": "https://github.com/pmvc-plugin/view_react/issues",
+                "source": "https://github.com/pmvc-plugin/view_react/tree/0.7.8"
+            },
+            "time": "2022-06-20T21:29:45+00:00"
         },
         {
             "name": "pmvc/pmvc",
-            "version": "dev-master",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pmvc/pmvc.git",
-                "reference": "6d05377c1208892173ca67aefb394def6d14ec2b"
+                "reference": "156711cd24a6dd31034c82528671cea714e72c52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pmvc/pmvc/zipball/6d05377c1208892173ca67aefb394def6d14ec2b",
-                "reference": "6d05377c1208892173ca67aefb394def6d14ec2b",
+                "url": "https://api.github.com/repos/pmvc/pmvc/zipball/156711cd24a6dd31034c82528671cea714e72c52",
+                "reference": "156711cd24a6dd31034c82528671cea714e72c52",
                 "shasum": ""
             },
             "require": {
@@ -108,11 +230,16 @@
             "require-dev": {
                 "pmvc-plugin/debug": "*",
                 "pmvc-plugin/dev": "*",
+                "pmvc-plugin/unit": "*",
                 "pmvc-plugin/utf8": "*",
                 "squizlabs/php_codesniffer": "@stable"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
+                "files": [
+                    "src/Constants.php"
+                ],
                 "psr-4": {
                     "PMVC\\": "src"
                 }
@@ -127,7 +254,7 @@
                     "email": "hill@kimo.com"
                 }
             ],
-            "description": "Pure plugin framework (PMVC7), use anything you like. No mvc, http inside.",
+            "description": "Pure plugin framework (PMVC with PHP8), use anything you like. No mvc, http inside.",
             "keywords": [
                 "framework",
                 "mvc",
@@ -136,7 +263,11 @@
                 "plug-in",
                 "pmvc"
             ],
-            "time": "2019-12-24 17:55:06"
+            "support": {
+                "issues": "https://github.com/pmvc/pmvc/issues",
+                "source": "https://github.com/pmvc/pmvc/tree/2.3.18"
+            },
+            "time": "2022-07-22T19:39:27+00:00"
         }
     ],
     "packages-dev": [],
@@ -146,5 +277,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
 }

@@ -1,46 +1,119 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
+DIR=$(
+  cd "$(dirname "$0")"
+  pwd -P
+)
 CHK_PHP=$(which php 2>/dev/null)
+PHP_CONFIG=$DIR/cnfig/config.php
+YO_CONFIG=$DIR/.yo
+WEBPACK_SERVER_CONFIG="--config webpack.server.mjs"
 
-if [ ! -z "$CHK_PHP" ]; then
-  conf=`DUMP=cli php -r "include('config/config.php');"`
+cd $DIR
+webpackEnabled=$([ -e "$YO_CONFIG" ] && awk -F "=" '/^webpackEnabled/ {print $2}' $YO_CONFIG)
+serverEnabled=$([ -e "$YO_CONFIG" ] && awk -F "=" '/^serverEnabled/ {print $2}' $YO_CONFIG)
+HTDOCS=${DIR}$([ -e "$YO_CONFIG" ] && awk -F "=" '/^HTDOCS/ {print $2}' $YO_CONFIG)
+SWJS=${HTDOCS}/service-worker.js
+
+if [ ! -z "$CHK_PHP" ] && [ -s "$PHP_CONFIG" ]; then
+  conf=`DUMP=cli php -r "include('$PHP_CONFIG');"`
 else
   conf='{'
   conf+='"assetsRoot":"./assets/",'
-  conf+='"devPort": "'${hotPort:-8080}'"'
+  conf+='"externals":{},'
+  if [ -z "$serverEnabled" ]; then
+    conf+='"indexTpl":"'${DIR}/index.tpl'",'
+    conf+='"indexHtml":"'${DIR}/index.html'",'
+  fi
+  conf+='"swDest":"'${SWJS}'",'
+  # conf+='"swDebug":true,'
+  conf+='"hotPort": "'${hotPort:-3088}'"'
   conf+='}'
 fi
-
 echo $conf;
-webpack='npm run webpack --'
 
-production(){
-    echo "Production Mode";
-    npm run build
-    NODE_ENV=production CONFIG=$conf $webpack 
-    NODE_ENV=production CONFIG=$conf $webpack --config webpack.server.js
+
+OPEN=$(which xdg-open 2> /dev/null)
+if [ -z "$OPEN" ]; then
+  OPEN="open"
+fi
+
+if [ "x$webpackEnabled" == "xon" ]; then
+  webpack='npm run webpack --'
+fi
+
+killBy() {
+  ps -eo pid,args | grep $1 | grep -v grep | awk '{print $1}' | xargs -I{} kill -9 {}
 }
 
-develop(){
-    echo "Develop Mode";
-    npm run build
-    CONFIG=$conf $webpack
-    CONFIG=$conf $webpack --config webpack.server.js
+stopServer() {
+  killBy ${DIR}/node_modules/.bin/ws
+  echo "stop server done"
 }
 
-analyzer(){
-    echo "Analyzer Mode";
-    npm run build
-    CONFIG=$conf BUNDLE='{}' $webpack
-}
-
-startServer(){
-    yarn
-    if [ -z "$port" ] ; then
-        port=3000;
-    fi
-    echo "Start server";
+startServer() {
+  stopServer
+  yarn
+  if [ ! -e "build" ]; then
+    develop
+  fi
+  port=${port-3000}
+  echo "Start server"
+  if [ "$1" == "open" ]; then
+    npm run start -- -p $port &
+    sleep 3
+    $OPEN http://localhost:$port
+  else
     npm run start -- -p $port -v
+  fi
+}
+
+stop() {
+  killBy ${DIR}/node_modules/.bin/babel
+  if [ ! -z "$webpack" ]; then
+    cat webpack.pid | xargs -I{} kill -9 {}
+    npm run clean:webpack
+  fi
+  [ -e "$SWJS" ] && rm $SWJS
+  echo "Stop done"
+}
+
+production() {
+  stop
+  echo "Production Mode"
+  npm run build
+  if [ ! -z "$webpack" ]; then
+    ENABLE_SW=1 CONFIG=$conf NODE_ENV=production $webpack
+    if [ ! -z "$serverEnabled" ]; then
+      ENABLE_SW=1 CONFIG=$conf NODE_ENV=production $webpack $WEBPACK_SERVER_CONFIG
+    fi
+  fi
+}
+
+analyzer() {
+  stop
+  echo "Analyzer Mode"
+  npm run build
+  [ ! -z "$webpack" ] && CONFIG=$conf BUNDLE='{}' $webpack
+}
+
+develop() {
+  stop
+  echo "Develop Mode"
+  npm run build
+  [ ! -z "$webpack" ] && CONFIG=$conf $webpack && [ ! -z "$serverEnabled" ] CONFIG=$conf $webpack $WEBPACK_SERVER_CONFIG
+}
+
+watch() {
+  echo "Watch Mode"
+  npm run build:es -- --watch &
+}
+
+hot() {
+  stop
+  echo "Hot Mode"
+  npm run build:es -- --watch &
+  [ ! -z "$webpack" ] && sleep 10 && HOT_UPDATE=1 CONFIG=$conf $webpack serve &
 }
 
 nodeTest(){
@@ -48,49 +121,35 @@ nodeTest(){
     echo ""
 }
 
-killBy(){
-    ps -eo pid,args | grep $1 | grep -v grep | awk '{print $1}' | xargs -I{} kill -9 {}
-}
-
-stop(){
-    DIR="$( cd "$(dirname "$0")" ; pwd -P )"
-    killBy ${DIR}/node_modules/.bin/babel 
-    cat webpack.pid | xargs -I{} kill -9 {}
-    npm run clean
-}
-
-hot(){
-    echo "Hot Mode";
-    npm run build:ui -- --watch &
-    npm run build:src -- --watch &
-    HOT_UPDATE=1 CONFIG=$conf $webpack serve &
-}
-
 case "$1" in
   node)
     nodeTest
     ;;
-  a)
-    analyzer 
-    ;;
-  s)
-    startServer 
-    ;;
   p)
-    stop 
     production
     ;;
+  a)
+    analyzer
+    ;;
+  s)
+    startServer $2
+    ;;
+  ss)
+    stopServer
+    ;;
   hot)
-    stop 
     hot
     ;;
+  watch)
+    watch
+    ;;
   stop)
-    stop 
+    stop
     ;;
   *)
-    stop 
     develop
-    exit
+    exit 0
+    ;;
 esac
 
 exit $?

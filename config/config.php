@@ -6,7 +6,6 @@ if (!defined('_INIT_CONFIG')) {
 $paths=[
     'index' => __DIR__.'/../index.html',
     'laze'  => __DIR__.'/../laze.html',
-    'header'=> __DIR__.'/../header.html',
 ];
 
 ${_INIT_CONFIG}=[
@@ -18,3 +17,21 @@ ${_INIT_CONFIG}=[
 if ('cli'===getenv("DUMP")){
     echo json_encode(${_INIT_CONFIG});
 }
+
+${_INIT_CONFIG}=[
+    'backend' => [
+      'paths'=>&$paths,
+    ],
+    'view' => [
+      'serviceWorkerURL'=>'/service-worker.js',
+    ],
+    'compile' => [
+//    'swDebug' => true, 
+      'assetsRoot'=>'assets/',
+    ]
+];
+
+if ('cli'===getenv("DUMP")){
+    echo json_encode(${_INIT_CONFIG}['compile']);
+}
+
