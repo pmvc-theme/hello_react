@@ -1,27 +1,27 @@
 <script>
-  (function(){
-      var time;
-      var retry=0;
-      time = setInterval(function(){
-          retry++;
-          if (retry > 5) {
-              clearInterval(time);
+(function(){
+  var time;
+  var retry=0;
+  time = setInterval(function(){
+    if (++retry > 30) {
+      clearInterval(time);
+      console.log('Retry Failed!!');
+    }
+    if ('undefined' !== typeof Reshow && Reshow.isLoad) {
+      clearInterval(time);
+        var laze = <?php echo $this->toJsonParse($this->get())?>;
+        if (laze && laze.data) {
+          var data = laze.data;
+          REACT_DATA.lazyData = REACT_DATA.lazyData || {};
+          for (var i in data) {
+            if(data.hasOwnProperty(i))
+            {
+              REACT_DATA.lazyData[i] = data[i];
             }
-          if ('undefined' !== typeof Reshow) {
-              var laze = <?php echo $this->toJsonParse($this->get())?>;
-              if (laze.hasOwnProperty('data')) {
-                  var data = laze.data;
-                  for (var i in data) {
-                      if(data.hasOwnProperty(i))
-                      {
-                          REACT_DATA.data[i] = data[i];
-                        }
-                    }
-                }
-              Reshow.update(REACT_DATA);
-              clearInterval(time);
-            }
-        },300);
-    }());
+          }
+          setTimeout(()=> Reshow.update({lazyData: REACT_DATA.lazyData}), 2000);
+        }
+    }
+  }, 100);
+}());
 </script>
-<?php echo $this['jsonld']?>
