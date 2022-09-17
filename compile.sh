@@ -73,6 +73,7 @@ stop() {
   if [ ! -z "$webpack" ]; then
     cat webpack.pid | xargs -I{} kill -9 {}
     npm run clean:webpack
+    rm $HTDOCS/workbox-*.js
   fi
   [ -e "$SWJS" ] && rm $SWJS
   echo "Stop done"
@@ -101,7 +102,7 @@ develop() {
   stop
   echo "Develop Mode"
   npm run build
-  [ ! -z "$webpack" ] && CONFIG=$conf $webpack && [ ! -z "$serverEnabled" ] CONFIG=$conf $webpack $WEBPACK_SERVER_CONFIG
+  [ ! -z "$webpack" ] && CONFIG=$conf $webpack && [ ! -z "$serverEnabled" ] && CONFIG=$conf $webpack $WEBPACK_SERVER_CONFIG
 }
 
 watch() {

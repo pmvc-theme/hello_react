@@ -1,4 +1,3 @@
-import React from 'react'; 
 import Hello from './hello';
 import Reshow from 'reshow'; 
 
