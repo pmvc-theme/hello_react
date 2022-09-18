@@ -118,13 +118,18 @@ hot() {
 }
 
 nodeTest(){
-    echo '{"themePath":"hello"}' | node ./server.js
+    theme=$1
+    if [ -z "$theme" ]; then
+      theme="Hello"
+    fi
+    echo "Theme Path: ${theme}"
+    echo '{"themePath":"'${theme}'"}' | node ./server.js
     echo ""
 }
 
 case "$1" in
   node)
-    nodeTest
+    nodeTest $2
     ;;
   p)
     production

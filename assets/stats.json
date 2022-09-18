@@ -1,23 +1,31 @@
 {
   "chunks": {
     "main": [
-      {
-        "name": "main.bundle.js",
-        "publicPath": "./assets/main.bundle.js?065bcd1"
-      }
+      "main.bundle.js"
     ],
     "lib": [
-      {
-        "name": "lib.bundle.js",
-        "publicPath": "./assets/lib.bundle.js?065bcd1"
-      }
+      "lib.bundle.js"
     ],
     "vendor": [
-      {
-        "name": "vendor.bundle.js",
-        "publicPath": "./assets/vendor.bundle.js?065bcd1"
-      }
+      "vendor.bundle.js"
     ]
+  },
+  "assets": {
+    "main.bundle.js": {
+      "name": "main.bundle.js",
+      "publicPath": "./assets/main.bundle.js?444e98d",
+      "path": "/Users/hill/git/hello_react/assets/main.bundle.js"
+    },
+    "lib.bundle.js": {
+      "name": "lib.bundle.js",
+      "publicPath": "./assets/lib.bundle.js?444e98d",
+      "path": "/Users/hill/git/hello_react/assets/lib.bundle.js"
+    },
+    "vendor.bundle.js": {
+      "name": "vendor.bundle.js",
+      "publicPath": "./assets/vendor.bundle.js?444e98d",
+      "path": "/Users/hill/git/hello_react/assets/vendor.bundle.js"
+    }
   },
   "publicPath": "./assets/",
   "status": "done"

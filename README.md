@@ -5,7 +5,17 @@
 [![Total Downloads](https://poser.pugx.org/pmvc-theme/hello_react/downloads)](https://packagist.org/packages/pmvc-theme/hello_react) 
 
 # PMVC Hello World react.js theme 
-===============
+
+## Test server output
+```
+./compile.sh node
+```
+
+## Add for git submodule
+* HTTP
+   * git submodule add https://github.com/pmvc-theme/hello_react hello_react
+* SSH
+   * git submodule add git@github.com:pmvc-theme/hello_react.git hello_react
 
 ## Install with Composer
 ### 1. Download composer
@@ -27,8 +37,4 @@
 #### 2.2 Or use composer command-line
    * php composer.phar require pmvc-theme/hello_react
 
-## Test
-```
-echo '{"themePath":"home"}' | node ./server.js
-```
 

@@ -1384,9 +1384,9 @@
     "@swc/core-win32-x64-msvc" "1.2.189"
 
 "@testing-library/dom@^8.5.0":
-  version "8.17.1"
-  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-8.17.1.tgz#2d7af4ff6dad8d837630fecd08835aee08320ad7"
-  integrity sha512-KnH2MnJUzmFNPW6RIKfd+zf2Wue8mEKX0M3cpX6aKl5ZXrJM1/c/Pc8c2xDNYQCnJO48Sm5ITbMXgqTr3h4jxQ==
+  version "8.18.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-8.18.0.tgz#fe5903a456f2c2b64770d91e50237a031c382121"
+  integrity sha512-hP7v7Ifiq104Lb4dTuQzUtlkbX4sgsmxVwOTnVSDOU4ntApvPfp+eFLvasS8GpMP6pVfdbNRXNF/bSK7LTriEg==
   dependencies:
     "@babel/code-frame" "^7.10.4"
     "@babel/runtime" "^7.12.5"
@@ -2899,9 +2899,9 @@ decamelize@^4.0.0:
   integrity sha512-9iE1PgSik9HeIIw2JO94IidnE3eBoQrFJ3w7sFuzSX4DpmZ3v5sZpUiV5Swcf6mQEF+Y0ru8Neo+p+nyh2J+hQ==
 
 decimal.js@^10.3.1:
-  version "10.4.0"
-  resolved "https://registry.yarnpkg.com/decimal.js/-/decimal.js-10.4.0.tgz#97a7448873b01e92e5ff9117d89a7bca8e63e0fe"
-  integrity sha512-Nv6ENEzyPQ6AItkGwLE2PGKinZZ9g59vSh2BeH6NqPu0OTKZ5ruJsVqh/orbAnqXc9pBbgXAIrc2EyaCj8NpGg==
+  version "10.4.1"
+  resolved "https://registry.yarnpkg.com/decimal.js/-/decimal.js-10.4.1.tgz#be75eeac4a2281aace80c1a8753587c27ef053e7"
+  integrity sha512-F29o+vci4DodHYT9UrR5IEbfBw9pE5eSapIJdTqXK5+6hq+t8VRxwQyKlW2i+KDKFkkJQRvFyI/QXD83h8LyQw==
 
 deep-eql@^3.0.1:
   version "3.0.1"
@@ -3118,9 +3118,9 @@ ejs@^3.1.6:
     jake "^10.8.5"
 
 electron-to-chromium@^1.4.251:
-  version "1.4.253"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.253.tgz#3402fd2159530fc6d94237f1b9535fa7bebaf399"
-  integrity sha512-1pezJ2E1UyBTGbA7fUlHdPSXQw1k+82VhTFLG5G0AUqLGvsZqFzleOblceqegZzxYX4kC7hGEEdzIQI9RZ1Cuw==
+  version "1.4.254"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.254.tgz#c6203583890abf88dfc0be046cd72d3b48f8beb6"
+  integrity sha512-Sh/7YsHqQYkA6ZHuHMy24e6TE4eX6KZVsZb9E/DvU1nQRIrH4BflO/4k+83tfdYvDl+MObvlqHPRICzEdC9c6Q==
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -3715,6 +3715,14 @@ get-caller-file@^2.0.1, get-caller-file@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-2.0.5.tgz#4f94412a82db32f36e3b0b9741f8a97feb031f7e"
   integrity sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==
+
+get-cookie@*:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/get-cookie/-/get-cookie-0.3.0.tgz#00d9682930d02394f065cb48fbb8642091421ca3"
+  integrity sha512-xGVulrWi2K8PV+EnkYk1bHK0TFxBtmSo4gGVJKLF3HBaFZ0aYokzgtgb6t7xkf2kqBrY6518j3W49gUdlLnuDA==
+  dependencies:
+    get-safe-reg "*"
+    win-doc "*"
 
 get-func-name@^2.0.0:
   version "2.0.0"
@@ -5703,6 +5711,15 @@ organism-react-animate@*:
     reshow-hooks "*"
     win-doc "*"
 
+organism-react-django@*:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/organism-react-django/-/organism-react-django-0.0.1.tgz#b34dc823f09632cd5c3656e46277bedd3c9646d0"
+  integrity sha512-qLE/pv4PQAC/SO8ARnLb8Gf0gX5gkRxW4jcJCv8xUcynOes1Nlh9fOIHx6sQFc7gw15t7xULGKk6233pUBcg8A==
+  dependencies:
+    get-object-value "*"
+    react-atomic-molecule "*"
+    react-atomic-organism "*"
+
 organism-react-navigation@*:
   version "0.17.19"
   resolved "https://registry.yarnpkg.com/organism-react-navigation/-/organism-react-navigation-0.17.19.tgz#9e1a3c686ac291c80234c54b2eb9aa5fc0a5b31b"
@@ -5942,6 +5959,13 @@ pkg-dir@^4.1.0, pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
+pmvc_react_landing@*:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/pmvc_react_landing/-/pmvc_react_landing-0.1.0.tgz#e90ee97042e76c5f11aa3eab68900f86021e35bc"
+  integrity sha512-f7npGJHp8YOrfV9JshkmdS2unB2dra8lQaUSIs+FqpILHKVBIMhnbKMafpzQ2o5OIaL9aeD0qsnB9oLBh0Tm6A==
+  dependencies:
+    react-atomic-molecule "*"
+
 prelude-ls@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
@@ -6163,6 +6187,23 @@ react-atomic-molecule@*:
     ucfirst-js "*"
     win-doc "*"
 
+react-atomic-organism@*:
+  version "0.16.10"
+  resolved "https://registry.yarnpkg.com/react-atomic-organism/-/react-atomic-organism-0.16.10.tgz#50ca2c86833ea7b0030390461728c4ac10fe2970"
+  integrity sha512-8rMkeOEPJHQtw91akMXqgwIJyLmA/Whh6RxzJKQDWd8GGKhfaPRj6GY2HjDUFyNFv5bTFe/er+JwP7OrTT/GcQ==
+  dependencies:
+    array.merge "*"
+    call-func "*"
+    form-serialize-js "*"
+    get-object-value "*"
+    get-random-id "*"
+    prop-types "*"
+    react-atomic-molecule "*"
+    reshow-constant "*"
+    ricon "*"
+    seturl "*"
+    win-doc "*"
+
 react-dom@^18.x:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
@@ -6367,9 +6408,9 @@ requires-port@^1.0.0:
   integrity sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==
 
 reshow-app@*:
-  version "0.17.88"
-  resolved "https://registry.yarnpkg.com/reshow-app/-/reshow-app-0.17.88.tgz#aa4a7b7faa8953e59e519f86af0d8d9f0f6d907c"
-  integrity sha512-SPvnLoreeIVd+Kfx9h4tz/7bBJWV8OjvbVUIo5vIK1h1dsqHm1GBV5vnBmyGV91Qokb6h/Rhn+HV9jyVIQd6Eg==
+  version "0.17.91"
+  resolved "https://registry.yarnpkg.com/reshow-app/-/reshow-app-0.17.91.tgz#f1eba6040768107daaa9e3c8848330373118b248"
+  integrity sha512-sb2Ug0zTvwUWmg/MjmFT3isK1ggcVeW+lMEdm+I2sNElCRTNZj4whqdbfyHgeRdG8n9G2tAuwN9Eple6k4dhzg==
   dependencies:
     "@swc/core" "1.2.189"
     ansi-html-community "0.0.8"

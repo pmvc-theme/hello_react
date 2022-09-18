@@ -9,8 +9,13 @@
   "author": "Hill <hill@kimo.com>",
   "license": "MIT",
   "dependencies": {
+    "get-cookie": "*",
     "get-object-value": "*",
+    "organism-react-django": "*",
+    "pmvc_react_landing": "*",
     "react": "^18.x",
+    "react-atomic-molecule": "*",
+    "react-atomic-organism": "*",
     "react-dom": "^18.x",
     "reshow": "*",
     "reshow-app": "*"
