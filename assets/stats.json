@@ -13,20 +13,20 @@
   "assets": {
     "main.bundle.js": {
       "name": "main.bundle.js",
-      "publicPath": "./assets/main.bundle.js?444e98d",
-      "path": "/Users/hill/git/hello_react/assets/main.bundle.js"
+      "publicPath": "/static/assets/main.bundle.js?15b61b3",
+      "path": "/Users/hill/git/django-boilerplate/wwwroot-orig/hello_react/assets/main.bundle.js"
     },
     "lib.bundle.js": {
       "name": "lib.bundle.js",
-      "publicPath": "./assets/lib.bundle.js?444e98d",
-      "path": "/Users/hill/git/hello_react/assets/lib.bundle.js"
+      "publicPath": "/static/assets/lib.bundle.js?15b61b3",
+      "path": "/Users/hill/git/django-boilerplate/wwwroot-orig/hello_react/assets/lib.bundle.js"
     },
     "vendor.bundle.js": {
       "name": "vendor.bundle.js",
-      "publicPath": "./assets/vendor.bundle.js?444e98d",
-      "path": "/Users/hill/git/hello_react/assets/vendor.bundle.js"
+      "publicPath": "/static/assets/vendor.bundle.js?15b61b3",
+      "path": "/Users/hill/git/django-boilerplate/wwwroot-orig/hello_react/assets/vendor.bundle.js"
     }
   },
-  "publicPath": "./assets/",
+  "publicPath": "/static/assets/",
   "status": "done"
 }
